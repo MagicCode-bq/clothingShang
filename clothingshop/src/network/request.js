@@ -4,7 +4,7 @@ import axios  from "axios";
 export  default  function  request(config) {
 
   let  axiosInstance = axios.create({
-     baseURL:'http://152.136.185.210:8000/api/w6',
+     baseURL:'',
      timeout:5000
     });
 
