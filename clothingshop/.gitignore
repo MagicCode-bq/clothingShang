@@ -2,7 +2,7 @@
 node_modules
 /dist
 network/request.js
-
+.gitignore
 
 # local env files
 .env.local
