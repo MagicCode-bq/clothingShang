@@ -1,7 +1,7 @@
 <template>
   <div>
     <router-view/>
-    <main-tab-bar/>
+    <main-tab-bar class="mainTabBar"/>
   </div>
 </template>
 
@@ -22,8 +22,7 @@ export default {
 
 <style>
  @import "assets/css/base.css";
-  .home-nav{
-    background-color: var(--color-tint);
-    color: white;
+  .mainTabBar{
+    background-color: #ffff;
   }
 </style>

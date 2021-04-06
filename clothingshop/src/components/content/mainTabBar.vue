@@ -1,5 +1,5 @@
 <template>
-   <div>
+   <div id="MainTarBar">
      <tab-bar>
        <tab-bar-item path="/home"  >
          <img  slot="item-image" src="~assets/image/tabbar/home.svg">
@@ -37,5 +37,8 @@
 </script>
 
 <style scoped>
+  #MainTarBar{
+    background-color: #eeeeee;
+  }
 
 </style>
