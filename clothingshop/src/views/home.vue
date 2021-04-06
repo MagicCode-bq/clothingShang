@@ -1,11 +1,15 @@
 <template>
     <div id="home">
       <nav-bar class="home-nav"/>
+
+      <scroll class="wrapper">
       <home-swiper :banner="banner" />
       <home-recommend-view :recommend="recommend" />
       <feature-view/>
       <tab-control @itemclick="itemClick"/>
       <good-list :goods="goodList" />
+      </scroll>
+
     </div>
 </template>
 
@@ -14,6 +18,7 @@
 
   import NavBar from "components/common/navbar/NavBar";
   import TabControl  from 'components/content/TabControl/TabControl'
+  import  scroll from 'components/common/Scroll/scroll'
 
   import HomeSwiper from "./home/HomeSwiper"
   import HomeRecommendView  from './home/HomeRecommendView'
@@ -34,13 +39,17 @@
         goodItemListType:"pop"
       }
     },
-    mounted() {
+    created() {
       //请求轮播图数据
       this.getHomeDataSwiper()
+
       //请求商品数据
       this.getHomeGoodList("pop");
       this.getHomeGoodList("new");
       this.getHomeGoodList("sell");
+      },
+    mounted() {
+
     },
     computed:{
       goodList(){
@@ -89,6 +98,7 @@
     components:{
       NavBar,
       TabControl,
+      scroll,
       HomeSwiper,
       HomeRecommendView,
       FeatureView,
@@ -101,6 +111,8 @@
 
   #home{
     padding-top: 44px;
+    height: 100vh;
+    position: relative;
   }
   .home-nav{
     background-color: var(--color-tint);
@@ -111,6 +123,14 @@
     right: 0;
     top: 0;
     z-index: 9;
+  }
+  .wrapper{
+    position: absolute;
+    top: 44px;
+    bottom: 49px;
+    left: 0px;
+    right: 0px;
+    overflow: hidden;
   }
 
 </style>
