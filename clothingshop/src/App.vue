@@ -1,6 +1,8 @@
 <template>
   <div>
+    <keep-alive>
     <router-view/>
+    </keep-alive>
     <main-tab-bar class="mainTabBar"/>
   </div>
 </template>
